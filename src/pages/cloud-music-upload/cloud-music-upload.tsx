@@ -1,19 +1,14 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { ofetch } from "ofetch"
-import { Button, Group, Text } from "@mantine/core"
-import {
-  Dropzone,
-  DropzoneProps,
-  FileWithPath,
-  IMAGE_MIME_TYPE,
-} from "@mantine/dropzone"
+import { Button } from "@mantine/core"
+import { Dropzone, FileWithPath } from "@mantine/dropzone"
 const MUSIC_API_URL = "https://netease-cloud-music-api-iota-weld.vercel.app"
 import "./style.css"
 
 const CloudMusicUpload = () => {
-  const [logined, setLogined] = useState(false)
+  const [_, setLogined] = useState(false)
   const [qrUrl, setQrUrl] = useState("")
-  const [userData, setUserData] = useState<Record<string, any>>({})
+  const [__, setUserData] = useState<Record<string, any>>({})
   const [cloudData, setCloudInfo] = useState<Record<string, any>[]>([])
   const checkStatus = async (key: string) => {
     const res = await ofetch(
@@ -50,7 +45,7 @@ const CloudMusicUpload = () => {
   async function login() {
     let timer: number = -1
     const cookie = localStorage.getItem("cookie") || ""
-    const isLogin = await getLoginStatus(cookie)
+    await getLoginStatus(cookie)
     // if (cookie && isLogin) {
     //   cloudInfo(cookie)
     //   return

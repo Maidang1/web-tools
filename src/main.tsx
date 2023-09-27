@@ -2,7 +2,7 @@ import React from "react"
 import ReactDOM from "react-dom/client"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 // import { CloudMusicUpload } from "./pages/cloud-music-upload"
-import { Container, MantineProvider } from "@mantine/core"
+import { MantineProvider } from "@mantine/core"
 
 import "./index.css"
 import "@mantine/core/styles.css"
